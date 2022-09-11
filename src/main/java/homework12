@@ -1,0 +1,28 @@
+public class homework21 {
+    public static void main(String[] args) {
+        String[] strs = {"floar", "flo", "floa","floy", "floooo"};
+        String Resultat = stringprefix(strs);
+    }
+    public static String stringprefix(String[] strs) {
+        int preficsLength = strs[0].length();
+        String ItogovayaStroka ="";
+        for (int i = 0; i < strs.length; i++) {
+            boolean provaerkapreficsa = strs[i].regionMatches(0, strs[0], 0, preficsLength);
+            if (provaerkapreficsa ==false){
+                preficsLength-=1;
+                i=i-1;
+            }
+        }
+        System.out.println(preficsLength);
+        char [] wordfirst = strs[0].toCharArray();
+        for (int i = 0; i < preficsLength; i++) {
+            ItogovayaStroka+=wordfirst[i];
+        }
+        if (preficsLength!=0){
+            return ItogovayaStroka;
+        }
+        else return "";
+    }
+
+    }
+
